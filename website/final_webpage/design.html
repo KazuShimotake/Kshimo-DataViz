@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- <title>Simple Sidebar - Start Bootstrap Template</title> -->
+         <title>CP341-DV: Design Process</title>
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v6.js"></script>
+       
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <!-- load the viz hub style sheet -->
+        <link rel="stylesheet" href="css/style_viz.css" />
+         <!-- load in the font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+     <!-- Website structure:
+What is our project about?
+- Domain
+- Questions
+- Tasks
+What Can you do with the Visualization
+Analyzing the data
+Design process :
+Brainstorming Datasets
+Drawing visual Encodings on White Board
+Challenges
+Similar data
+Figuring out linking
+Mapping a one to many
+Popup tool problem
+GeoJason
+Descision made along the way and why
+Interation after feedback
+Things we want to do hypothetical next steps
+Conclusion: 
+What did we learn
+How did we apply the things we were taught
+What were we taught
+How did we apply it… 
+
+         -->
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Cat Breeds Project </br> Navigation:</div>
+
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Home</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="intro.html">What is our Project About?</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="design.html">Design Process</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="conclusions.html">Conclusion</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="../home.html">Home</a></li>
+                                <!-- <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li> -->
+                                <li class="nav-item active"><a class="nav-link" href="#!">About</a></li>
+
+                                <!-- <li class="nav-item"><a class="nav-link" href="#!">Link</a></li> -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#!">Action</a>
+                                        <a class="dropdown-item" href="#!">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                    </div> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">     
+                    <!-- <h1 class="mt-4">Simple Sidebar</h1> -->
+                    <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p> -->
+                   
+                    <!-- <h1 class="mt-4">CP341-DV: Cat Breeds project</h1>
+                    <h3> By Grace Ivaska and Kazu Shimotake</h3> -->
+                    <div id="design-process-body">
+                        <h1 class="mt-4">Design Process: </h1>
+                    
+                        <div id="dp-brainstorming">
+                            <h2>Brainstorming Data Sets: </h2>
+                            <p> We first started our process with brain storming what datasets we wanted to work with.  </p>
+                            <ul>
+                                <li>cats</li>
+                                <ul>
+                                    <li><a href="https://www.kaggle.com/datasets/warcoder/cat-breeds-details"> Cat breeds details by CHIRAG CHAUHAN </a></li>
+
+                                </ul>
+                                <li>pokemon</li>
+                                    <ul>
+                                        <li>type chart
+                            <a href="https://www.kaggle.com/datasets/jadenbailey/pokemon-type-chart">Pokemon Type Chart by JADEN BAILEY</a>
+
+                                        </li>
+                                        <li>across different generations
+                            <a href="https://www.kaggle.com/datasets/rounakbanik/pokemon"> The Complete Pokemon Dataset by ROUNAK BANIK</a>
+
+                                        </li>
+                                    </ul>
+                                <li>manga sales, just iterating on our previous project...
+                                    <ul>
+                                        <li>
+                                        <a href="https://www.kaggle.com/datasets/kabhishm/best-selling-manga-of-all-time">Best Selling Manga of All Time by KABHISHM</a>
+                                        </li>
+                                        <li> 
+                                        <a href="https://www.kaggle.com/datasets/drahulsingh/best-selling-manga">best-selling-manga by D RAHULSINGH</a>
+                                        </li>
+
+                                    </ul>
+    
+                                </li>
+                                <li>daylight savings and effect on sleep</li>
+                            </ul>
+                            <p> Some challenges we had with looking up data sets is finding data that is not missing a lot of information or contains the information we are looking for in the right format. For instance, looking for cat data we wanted to know where the breeds come from, but most of the data sets were pictures or audio files. 
+                                When we did find some data sets they did not have an orgin or place column, <a href="https://www.kaggle.com/datasets/ma7555/cat-breeds-dataset?rvi=1">Cat Breeds Dataset by MA7555</a>. The other issue we ran into was the topics we wanted to look into were a bit too specialized ( like the HSP) or did not really seem to fit a machine learning learning purpose. 
+                                When looking up things like sleep and dailights saving , only studies on the different sleep phases showed up. When looking for cat data set we ran into a lot of data for training an image recognition model, <a href="https://www.kaggle.com/datasets/dseidli/lcwlabeled-cats-in-the-wild?rvi=1">LCW(Labeled Cats In The Wild) by DSEIDLI </a>. 
+                                It was hard to just get a cat data set as opposed to a cat vs dog data set, <a href="https://www.kaggle.com/datasets/imsparsh/animal-breed-cats-and-dogs?rvi=1">Animal Breed - Cats and Dogs by SPARSH GUPTA</a>.  </p>
+                            
+                            
+                            
+                            <a href=""></a>
+
+
+
+                        </div>
+                        <div id="dp-whiteboard">
+                            <h2>Drawing Visual Encodings on the White Board: </h2>
+                            <div id="white-barchart">
+                                <h4> 1. Interactive Histogram:</h4>
+                                <div id = "bc-pic"> <img class ="medium-img" src="static/finalcatphotos/drawingvisencodingsbar.jpeg"></div>
+                                <div id ="bc-para" class = "pic-caption">
+                                    <p> (above is us figuring out the bar chart / histogram idea and its interactions)</p>
+                                </div>
+                                <div id ="bc-desc">
+                                    <ul>
+                                        <li> <b> Marks:</b> lines</li>
+                                        <li> <b> Encodings:</b> length of Bar, bar color
+                                        </li>
+                                        <li>A histogram where the x values(independent) are the countries and the Y values(dependent) is the number of cat breeds from that country</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div id="white-legend">
+                                <h4> 2. Interactive Legend:</h4>
+                                <div id = "il-pic"> <img  src="static/finalcatphotos/drawingvisencodingslegendmap.jpeg"></div>
+                                <div id ="il-desc">
+                                    <ul>
+                                        <li> <b> Two SVG layout:</b>
+                                        <ol>
+                                            <li> one SVG  is a world map with some encoding, color or shade.
+                                                <ul>
+                                                    <li>This map is colored based on the origin of the cat breed. The darker the color the more cat breeds from this country.</li>
+                                                    <li>When you highlight over country it highlights the cats that are from that country</li>
+
+                                                </ul>
+                                            </li>
+                                            <li>second SVG is the legend to the map. The legend is a list of cat breeds and a map colored based on the number of cat breeds from that country.
+                                                <ul>
+                                                    <li>When you highlight over a cat it highlights the country it is from </li>
+                                                    
+                                                </ul>
+                                            </li>
+
+                                        </ol>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div id ="il-inter-desc">
+                                    <ul>
+                                        <li> <b> Interaction Description:</b> 
+                                            <ul>
+                                                <li> When you highlight over country it highlights the cats that are from that country</li>
+                                                <li> When you highlight over a cat it highlights the country it is from </li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div> -->
+
+                            </div>
+                            <div id="white-scatmap">
+                                <h4>3. Interactive Scatter Plot and World Map:</h4>
+                                <div id = "ism-pic"> <img src="static/finalcatphotos/drawingvisencodingscattermap.jpeg"></div>
+                                <div id ="ism-desc">
+                                    <ul>
+                                        <li> <b> Two SVG layout:</b>
+                                        <ol>
+                                            <li> one SVG  is a world map with some encoding, color or shade.
+                                                <ul>
+                                                    <li>This map is colored based on the origin of the cat breed. The darker the color the more cat breeds from this country.</li>
+                                                    <li>When you highlight over country it highlights the cats that are from that country on the 2nd SVG (scatter plot)</li>
+
+                                                </ul>
+                                            </li>
+                                            <li>second SVG is an interactive Scatter Plot:
+                                                <ul>
+                                                    <li>The second graph is a scatter plot graphing different cat breeds based on two of their attributes	</li>
+                                                    <li>To start, we chose Maximum life expectancy(x) and Maximum weight(y)</li>
+                                                    <li>When you highlight over a cat dot, it highlights the countries that cat is from on the map</li>
+                                                    
+                                                </ul>
+                                            </li>
+
+                                        </ol>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        <div id="white-transistion">
+                        </div> 
+
+
+                        </div>
+                        <div id="dp-challenges">
+                        <h2>Challenges: </h2>
+                            <div id=" challenges-intro">
+                                <p> Here are some of the challenges we worked through during this project. </p>
+                            </div>
+                            <div id="challenges-similar-data">
+                            <h3>1. Similar Data:</h3><br>
+                            <p>Much of the data was the same, it resulted in the dots to overlap:</p>
+                            <div><img src="static/finalcatphotos/scatterdotoverlap.png"></div>
+                            <p>We only saw 28 dots on the scatter plot when there should be 61. 
+                                So to check if our code was drawing all the dots we revisited the spread sheet with our data and there was 
+                                a bunch of overlap between the various cat breeds. </p>
+                                <div><img class="medium-small-img" src="static/finalcatphotos/catdataoverlaprevisit.png"></div>
+                                
+                                <p>So then we decided to see how much overlap there was by creating a different sheet. 
+                                    In this sheet we (i.e. Kazu) grouped all the duplicates together by color. Then we counted the number of color groups we have. 
+                                    </p>
+                                    <!-- trying to get rows -->
+                                    <div class="row">
+                                        <div class="column">
+                                          <!-- <img  src="static/finalcatphotos/catdataoverlapnewsheet.png" style="width:100%"> -->
+                                          <img class="medium-img" src="static/finalcatphotos/catdataoverlapnewsheet.png" >
+
+                                        </div>
+                                        <div class="column">
+                                          <img class="medium-small-img" src="static/finalcatmemes/dupeschecking.GIF" style="width:30%">
+                                        </div>
+                                      </div>
+                                    <!-- <div><img class="medium-img" src="static/finalcatphotos/catdataoverlapnewsheet.png"></div>
+                                    <div><img src="static/finalcatmemes/dupeschecking.GIF"> -->
+                                    <p>If the scatterplot did just plot the dots in the same position, then the number of color groups should be 28. 
+                                        Which we were able to confirm this way.</p>
+                                
+                            </div>              
+                            <div id="challenges-linking">
+                                <h3>2. Figuring out the Linking:</h3><br>
+                                <div id ="challenges-linking-intro">
+                                    This happened in a couple of steps and with figuring out a couple different pieces.  
+                                        <ul>
+                                            <li>Figuring out what HTML elements had to do with linking</li>
+                                            <li>Mapping a one to many connection through class and id </li>
+                                            <li>Figuring out the role of classes and ids
+                                            </li>
+                                            <li>How to set up each HTML element so that the linking would work</li>
+                                        </ul>
+                                    </div>
+                                <div id="linking-one-paths">
+                                        <h4> 2.1 Figuring out what HTML elements had to do with linking</h4>
+                                        <p> One piece to figuring out the linking was to understand how paths work, or so we thought. 
+                                            This led us to writing down our plan and goals relating to how we wanted to solve the linking problem.</p>
+                                        <div><img src="static/finalcatphotos/pathfunctionwhiteboard.jpeg" style="max-width: 70%;"></div>
+                                        <p>We were also brainstorming how path elements could relate to linking the two graphs together since we were not sure 
+                                            what path elements had to do with linking in the first place. So as we were trying to link things up we realized that 
+                                            we needed to have one country get mapped to one or many cats and also have one cat map to one or many countries. This led us into the next part. </p>
+                                </div>
+                                <div id="linking-two-onetomany">
+                                    <h4> 2.2 Mapping a one to many connection through class and id </h4>
+                                    <p>So we went to office hours to ask more about how to link up a one to many relationship and our professor suggested we try to set the class of 
+                                        a circle element to all the countries the cat was from and to set the id of the paths to the country name. <br>
+                                        This led us to think about how class and ids relate to linking the two graphs together. So we went back to the white board 
+                                        thinking about how to link the different elements together so that when you highlight (ie. mouse over) one element in one SVG, it changes the attributes of another element in the other SVG.
+                                        </p>
+                                        <div><img src="static/finalcatphotos/pathfunctionwhiteboardextra.jpeg"></div>
+                                    <p> It was around here that we realized a variety of things: </p>
+                                    <ol>
+                                        <li>How the js Map object was going to allow us to get access to rows of the table we were interested in.</li>
+                                        <li>How the different elements were encapsulated and modifying path elements did not affect circle elements. Also we need to keep track of which pieces belonged to which SVG.</li>
+                                        <div><img class="medium-img" src="static/finalcatphotos/pathfunctionnotebook.jpeg"></div>
+                                        <li>How selection allowed us to change HTML elements dynamically
+                                        </li>
+                                        <li>That the path element was no different from other elements and thus we can modify it in the same way we are modifying the circle elements for the scatter plot. </li>
+                                        <li>How we can join data to an HTML and how to acess that data.
+                                        </li>
+                                        
+                                        <li>How to get access to the data stored into HTML by using JS maps. 
+                                        </li>
+                                        <li>That we need to create a separate CSV and Map for countries and the cat breeds that are associated with that country.</li>
+
+                                    </ol>
+                                    <p>Funny thing about all these relizations was their connection to our understanding of the roles of classes and ids for HTML and Js.</p>
+                                </div>
+                                <div id="linking-three-roles">
+                                        <h4>2.3 Figuring out the role of classes and ids
+                                        </h4>
+                                        <p>Of the many things we had figured out, realizing how the classes and ids was essential. We say this because the moment we realized 
+                                            the role of classes and id, all the other code we had set up suddenly fell into place. </p>
+                                            <div id ="three-roles">
+                                                <p>The roles for ids,</p>
+                                                <ul>
+                                                    <li>Was used to get the column from the correct cvs stored in a JS Map and set it up as the class of the element that triggered the event</li>
+                                                    <li>Was to be both the key in a map that contains data, and to be an identifier for an HTML element. 
+                                                    </li>
+
+                                                </ul>
+                                            <p>The roles for classes,</p>
+                                                <ul>
+                                                    <li>To be a list of values we can use to find HTML elements we can modify dynamically</li>
+                                                </ul>
+                                            </div>
+                                            <div id ="three-properties">
+                                                <p>In figuring out the roles we also discovered how to leverage the properties of classes in a way that allow us to create a one to many link:
+                                                </p>
+                                                <ol>
+                                                    <li> One HTML element can have multiple classes
+                                                        <ul>
+                                                            <li>So one circle element can have multiple countries associated with it</li>
+                                                            <li>One path element can have multiple cat breeds associated with it</li>
+
+                                                        </ul>
+                                                    </li>
+                                                    <li> Ids have to be unique, whereas classes do not.
+                                                        <ul>
+                                                        <li>So multiple different elements can have the same class.</li>
+                                                        <li>So multiple circle elements can be associated with the same country/countries
+                                                        </li>
+                                                        <li>So multiple path elements can be associated with the same cat breed/breeds.
+                                                        </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li> When you search for a class it looks for HTML elements that have at least one instance of that class listed. So it will return an HTML that has just that class or an HTML that has that class plus more different classes. 
+                                                    <br><br><p>searchAll(.usa) returns the following: </p>
+                                                        <ul>
+                                                            <li>&ltcircle id =”cat breed 1” class = “usa”&gt&lt/circle&gt</li>
+                                                            <li>&ltcircle id =”cat breed 2” class = “usa canada”&gt&lt/circle&gt</li>
+                                                            <li>&ltcircle id =”cat breed 3” class = “china usa japan”&gt&lt/circle&gt</li>
+
+                                                        </ul>
+                                                        <br><br><p>searchAll(.usa.canada)  returns the following: </p>
+
+                                                        <ul>
+                                                            <li>&ltcircle id =”cat breed 1” class = “usa canada”&gt&lt/circle&gt</li>
+                                                            <li>&ltcircle id =”cat breed 2” class = “usa russia canada”&gt&lt/circle&gt</li>
+                                                            <li>&ltcircle id =”cat breed 3” class = “canada england wales usa japan”&gt&lt/circle&gt</li>
+
+                                                        </ul>
+                                                    </li>
+
+
+                                                </ol>
+                                            </div>
+                                            <p> So with our new understanding of the roles of ids and classes and the properties of classes we were finally able to actually set up the HTML elements so that the linking would work. </p>
+
+                                </div>
+                                <div id="linking-four-setup">
+                                        <h4>2.4 How to set up each HTML element so that the linking would work</h4>
+                                        <div id="four-getting-key-for-jsmap">
+                                            <p>The map object required a key and that key was the cat breed. This then gave us a row from the cat data set. We could then select the  country column and assign it as the class of that circle element with the join(). </p>
+                                        </div>
+                                        <div><img src="static/finalcatphotos/mapobjectjoinrow.png"></div>
+                                        <div id="four-need-another-jsmap">
+                                            <p>
+                                                Seeing how this worked for the circles and cat breeds we then thought ok so we just need to do this for the path objects. However, our Map only took cat breeds as the key. We also needed to use one country to find one to many cats. 
+                                            </p>
+
+                                            <p>
+                                                To do this, we had to go back to Google Colab and create a separate CSV that had countries, the number of cats breeds from those countries, and a list of cat breed names. Using this new CSV, we made another map object that had countries as keys and a list of breeds from each country as values. 
+                                            </p>
+                                        </div>
+                                        <div><img src="static/finalcatphotos/twomaps.png" style="max-width: 100%;"></div>
+                                        <div id ="linking-map-caption" class="pic-caption">
+                                            (The map with 34 items is the country to cats map.The one with 61 is the map of cat breeds which includes the list of countries they’re from)
+                                        </div>
+                                        <div id="four-rinse-repeat-for-country-jsmap">
+                                            <p>Then we repeated the same process as above, this time making the class of the paths to be the names of cat breeds and the id the name of the country. </p>
+                                        </div>
+
+                                </div>
+                                <div id="linking-summary">
+                                        <h4>2.5 Linking Summary: </h4>
+                                        <div id="linking-summary-parsing"> 
+                                            <h5>Parsing and Formatting Data:</h5>
+                                            <p>We parsed data in python google collab first.</p>
+                                            <ul>
+                                                <li>Fix the origin column</li>
+                                                <li>Had to create a separate csv for the Country to cats data based on the cat breed set</li>
+                                            </ul>
+                                        </div>
+                                        <div id="linking-summary-map">
+                                            <h5>JS Map Instantiation:</h5>
+                                            <p>We had to create two maps in java script:</p>
+                                            <ul>
+                                                <li>catNamesData:
+                                                <ul>
+                                                    <li>The key for the cat to country was the cat breed name.</li>
+                                                    <li>Uses the rows of catData (the cat breed csv)</li>
+
+                                                </ul>
+                                                </li>
+                                                <li>countryData:
+                                                    <ul>
+                                                        <li>The key for the country to cat data was the country. </li>
+                                                        <li>Uses the rows of countryCatData (modified and re arranged cat breed csv)</li>
+            
+                                                    </ul>
+                                                </li>
+
+                                        </div>
+                                        <div id = "linking-summary-settingidsclasses">
+                                            <h5>Setting up ids and classes in JS:</h5>
+                                            <p>We then needed to set the ids and classes for the path and circle elements. </p>
+                                            <ul>
+                                                <li>The way we set up the classes and ids allowed us to map a one to many relationship </li>
+                                                <li>Classes need to be separated by spaces</li>
+                                                <li>Used underscores to keep multiworded names together.</li>
+
+                                            </ul>
+                                        </div>
+                                        <div id = "linking-summary-map-to-scat">
+                                            <h5>From Map to Scatter Plot:</h5>
+                                            <ul>
+                                                <li>We highlight a country, USA</li>
+                                                <ul>
+                                                <li>We get the id USA</li>
+                                                <li>Then in  countryData we use the key USA, to get the value, a row, in countryCatdata </li>
+                                                <li>Then for that row we look for an attribute/ column called names ( ie. cat breeds) </li>
+                                                <li>We then get that cell value which will be a list of names.</li>
+                                                <li>We then compare that list of names with the classes of the circles in the scatter plot. ( that is we searchAlL of the &ltcircle&gts that have a class that matches the list of names for the USA. </li>
+                                                <ul>
+                                                    <li>If the class of a circle element matches the list of cats then do something with this circle, like make it bigger, or change its color.</li>
+                                                    <li>If the class of this circle element doesn’t match then do not do anything. </li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                        <div id="linking-summary-parsing-scat-to-map">
+                                            <h5>From Scatter Plot to Map:</h5>
+                                            <ul>
+                                                <li>We highlight a dot in the Scatter plot, Cornish Rex</li>
+                                                <ul>
+                                                <li>We get the id Cornish Rex
+                                                </li>
+                                                <li>Then in catNameData. we use the key Cornish Rex , to get the value, a row in catData, </li>
+                                                <li>Then for that row we look for an attribute/ column called country </li>
+                                                <li>We then get that cell value which will be a list of countries the cat breed originates from.</li>
+                                                <li>We then compare that list of countries with the classes of the path in the map. ( that is we searchAlL of the &ltpath&gts that have a class that matches the list of countries for the Cornish Rex.</li>
+                                                <ul>
+                                                    <li>If the class of a path element matches the list of cats then do something with this path, like change its color.</li>
+                                                    <li>If the class of this path element doesn’t match then do not do anything. </li>
+
+                                                </ul>
+
+                                            </ul>
+                                        </div>
+
+
+
+
+
+                                </div>
+
+
+                            </div>
+                            <div id="challenges-popup-tool">
+                            <h2>3. Popup Tool Problem:</h2><br>
+                            <div>
+                                    <p>
+                                        Starts with not rendering the popup tooltip window:
+                                    </p>
+                                </div>
+                            <div><img src="static/finalcatphotos/popuptooltipinvisible.png"></div>
+                            <div>
+                                    <p>After changing the left and top pixel position  the div showed up but now was out of the view frame and thus was not rendering:</p>
+                            </div>
+                            <div><img src="static/finalcatphotos/popuptooltipusalong.png"></div>
+                            <div>
+                                    <p>So then we changed how cats were listed so that it was not one column but two columns if the length of the cat breeds was larger than 7 cat breeds. </p>
+                            </div>
+                            <div><img src="static/finalcatphotos/popuptooltipusafixed.png"></div>
+                            <div>
+
+                            </div>
+
+                            <div><img src="static/finalcatphotos/popuptooltiprussia.png"></div>
+                            <div><img src="static/finalcatphotos/popuptooltipchina.png"></div>
+
+                            </div>
+                            <div id="challenges-geojson">
+                            <h2>4. Some of the countries in our data don't exist in our GeoJson Map:</h2><br>
+                            <div id="geojson-nope">
+                                <p> The world geojson we were using did not have the following countries</p>
+                                <ul>
+                                    <li>Kuril Islands - is considered as Russia...</li>
+                                    <li>Singapore - is considered as Malaysia...</li>
+                                    <li>Ireland  is just England..</li>
+                                    <li>Scotland is just England..</li>
+                                    <li>Wales is just England..</li>
+                                    <li>We are aware that all of these are separate countries ...
+                                        <ul> and that
+                                            <li>Great Britain: England, Scotland, Wales</li>
+                                            <li>United Kingdom: England, Scotland, Wales and Northern Ireland</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div id="geojson-img"> <img class="medium-img" src="static/finalcatmemes/idonotam.JPG"></div>
+                            </div>
+                            <!-- <p>A lot of the cats’ country names weren’t consistent(i.e. US, USA, United States) 
+                                or had additional things attached(Kentucky, United States)</p> -->
+                        </div> 
+                        <div id="dp-iter-feedback">
+                            <h2>Iteration After Feedback: </h2>
+                                <div id="iter-intro">
+                                    <p>
+                                        So around a week after working on our project, the professor had us demo and evaluate the current state of our projects so that we could improve and iterate on them.
+                                        This is an important step of the design process because it allows us to challenge our assumptions and consider areas where we are 
+                                        not as doing as well as we think we are. It allows us to incorporate others perspectives while at the same time learn about those perspectives. 
+
+                                    </p>
+                                </div>
+                                <div id="iter-activity">
+                                    <h3>Feedback Activity:</h3>
+                                    <div id="iter-activity-desc">
+                                        <p>In class, Ben (a.k.a. the professor) had us test out each other’s projects and give constructive feedback about how well the visualizations enabled specified tasks such as “discover what cats are from a country”. 
+                                            He had us list out three good points that worked well, two bad points that made the task difficult, and at least one suggestion for improvements on each other's visualizations. </p>
+                                    </div>
+                                    <div id="iter-activity-pic"><img class="medium-img" src="static/finalcatmemes/catfeedback.GIF"></div>
+
+                                </div>
+                                <div id="iter-feedback-peers">
+                                    <h3>Feedback Summary:</h3>
+                                    <div id="iter-peers-trans">
+                                        <p>So after collecting all our feedback, these are the common themes:</p>
+                                    </div>
+                                    <div id="iter-peers-scatter">
+                                        <p><b>Comments Relating to the Scatter Plot:</b></p>
+                                        <ul>
+                                            <li>Hard to find info about specific breeds</li>
+                                            <li>Hard to understand because of overlapping</li>
+                                            <li>Don’t see correlations</li>
+                                            <li>Would be nice to be able to adjust the scatter plot to different x and y axes</li>
+                                        </ul>
+
+                                    </div>
+                                    <div id="iter-peers-tooltip">
+                                        <p><b>Suggestions for the tool tip:</b></p>
+                                        <ul>
+                                            <li>Tooltip is difficult to read when the list of breeds from a country is too long</li>
+                                            <li>Tooltip would be useful for differentiating different cat dots on the scatterplot</li>
+                                            <li>Suggested information to add to scatterplot tooltip:</li>
+                                            <ul>
+                                                <li>Name and country</li>
+                                                <li>Pictures of the different cat breeds</li>
+                                            </ul>    
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="iter-our-response">
+                                    <h3>Why do we think this feedback is constructive or not:</h3>
+                                    <div id="iter-our-response-scatter">
+                                        <p><b>Scatter Plot improvements: </b></p>
+                                        <ul>
+                                            <li>
+                                                The feedback about finding info about specific breeds in the scatter plot is helpful since it directly interferes with the tasks 
+                                                that prospective viewers might want from our visualization.
+                                            </li>
+                                        </ul>                                    
+                                        <div id="iter-our-response-pic"><img src="static/finalcatmemes/catblockingscreen.JPG"></div>    
+                                    </div>
+                                    <div id="iter-our-response-tooltip">
+                                        <p><b>Tool tip suggestions: </b></p>
+                                        <ul>
+                                            <li>
+                                                The same goes for the difficulties around the tooltip for countries with long cat lists and not having the tooltip for 
+                                                the scatter plot dots having name and country
+                                            </li>
+                                            <li>
+                                                The suggestion for pictures in the scatter plot tooltip is something that could be interesting, 
+                                                but it would also take up more space when it pops up and potentially block out access and visibility to other dots
+                                            </li>
+                                        </ul> 
+                                        <div id="iter-our-response-tool-pic"><img src="static/finalcatmemes/popupcatimages.JPG"></div>
+                                    </div>
+                                    <div id="iter-our-response-overlap-corr">
+                                        <p>The feedback about overlap and correlation is more related to the data and data processing than the scatter plot visualization itself... </p>
+                                        <p><b>Overlap:</b></p>
+                                        <ul>
+                                            <li>For this we can try to process the data with litter alteration (i.e. add jitter ) or change the opacity of the dots( which we already have done), change the size of the dots, 
+                                                make it so we can interact with the stack of dots. Beyond that there is not much we can do about overlapping. 
+                                                We do not want to modify the data values too much to preserve it.  </li>
+                                        </ul>
+                                        <p><b>Correlation:</b></p>
+                                        <ul>
+                                            <li>For correlation there is not much we can do about correlation if the data doesn’t correlate. What we can do is make it so the user can change the x and y axis so 
+                                                they can look through different attributes of the data and find trends in the data.</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div id="iter-actions">
+                                    <h3>Augmentations based on this feedback: </h3>
+                                    <div id="iter-actions-scatter">
+                                        <p><b>Scatter Plot:</b></p>
+                                        <ul>
+                                            <li>We added minor jitter to our data to reduce overlap of cat breeds
+                                                <div id="iter-actions-pic"><img class="medium-img" src="static/finalcatmemes/catdatajitter.GIF"></div>
+                                            </li>
+                                            <li>We added dropdown menus for the axes to be able to display relations between different traits such as minimum or maximum weight</li>
+                                            <li>We added a tooltip popup for the scatter plot side that states a dot’s cat breed and the country or countries that cat is from
+                                                <ul>
+                                                    <li>When the popup comes up for a cat dot, the cat’s name is bolded while the countries that it’s from are normal text</li>
+                                                    <li>Similarly, when it comes up for a country, the country’s name is bolded while the cats from that country are normal text</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="iter-actions-tooltip">
+                                        <p><b>Tool Tip:</b></p>
+                                        <ul>
+                                            <li>We formatted the display of the tooltip for long lists so it would be easier to read.</li>
+                                            <li>For the map we bolded the country and for the scatter plot we bolded the cat breed name. </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- <div id=""></div> -->
+                            
+                        
+                        </div>
+                        <div id="dp-decisions">
+                            <h2>Decisions Made Along the Way: </h2>
+                            <div id="decisions-intro"> 
+                                <p>This is a summary of all the design decisions we made when coding our project. </p>
+                            </div>
+                            <div id="decisions-map">
+                                <p><b>Map:</b></p>
+                                <ul>
+                                    <li> Structure:
+                                        <ul>
+                                            <li>Choose color palette <a href="https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3">Color Brewer</a></li>
+                                            <li>Added a legend for the map to help distinguish the difference between similar color shades and specify the interval associated with that color </li>
+                                            <li>Added custom buckets for the legend since we had most cats from 1-8 and one 23 but we couldn’t throw it out. </li>
+                                            <li>Basic title</li>
+
+                                        </ul>
+                                    </li>
+                                    <li> Interactions/Events:
+                                        <ul>
+                                            <li>Added a popup window that lists out the cats </li>
+                                            <li>Make the countries change color when mouse is over a country on the map to help keep track of what country the cursor is on</li>
+                                            <li>zoom and pan </li>
+                                        
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="decisions-scatter">
+                                <p><b>Scatter Plot:</b></p>
+                                <div id = "scatter-list"></div>
+                                    <ul>
+                                        <li> Structure:
+                                            <ul>
+                                                <li>Colored the dots based on the cats origins</li>
+                                                <li>Basic title
+                                                </li>
+                                                <li>Jitter</li>
+
+                                            </ul>
+                                        </li>
+                                        <li> Interactions/Events:
+                                            <ul>
+                                                <li>Changeable axes and animation</li>
+                                                <li>Make cat dots expand when mouse is over the dot to show which dot you have selected</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                            </div>
+                            <div id="descisions-scatter-pic"> <img class="medium-img" src="static/finalcatmemes/catexpand.JPG"></div>
+                            <div id="decisions-linking">
+                                <p><b>Linking Interactions:</b></p>
+                                <div id = "linking-list">
+                                    <ul>
+                                        <li>Make the countries change color when the mouse is over the associated cat dot to display what countries that cat is from.</li>
+                                        <li>Make cat dots expand and more bold when mouse is over the associated country to display what cats are from that country.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="decisions-both">
+                                <p><b>Both Map and Scatter Plot:</b></p>
+                                <div id = "both-list">
+                                    <ul>
+                                        <li>Made the tooltip move with the mouse at all times rather than just when hovering over a country or cat dot to prevent the popup tooltip from blocking other countries when hidden</li>
+                                    </ul>
+                                </div>
+                                <div id="both-pic"> <img class="medium-img" src="static/finalcatmemes/tooltipmouse.JPG"></div>
+
+                            </div>
+                        </div>
+                        <div id="dp-further-improvements">
+                        <h2>Further Improvements... </h2>
+                            <div id="further-intro">
+                                <p> Finally...whew this is a really long page... anyways... as you know things can always be improved. If we had some more times these were somethings we would want to do with our data viz:</p>
+                            </div>
+                            <div id="further-list">
+                                <ul>
+                                    <li>Refactor the code and separate into different files for organization</li>
+                                    <li>Add entries for Singapore, Wales, Scotland, and Kuril Islands to the geojson data</li>
+                                    <li>Add pictures for the cats</li>
+                                    <li> Pick the color scheme</li>
+                                    <li> Pick how the dots and map is colored based on the data </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>   
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src ="js/bundle.js"> </script>
+    </body>
+</html>

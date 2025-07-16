@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP341: Data Visualization : Grace I. </title>
+     <link rel = 'stylesheet' href ='css/style.css'>
+</head>
+<body>
+    <div id ="topnav">
+        <a href="https://www.coloradocollege.edu/other/ssi/index.html", class ="go-nav", title ="Colorado College Sign In"> CC</a>
+        <!-- <a href="#manga-vis", class ="go-nav", title ="Manga Visualization"> Manga</a> -->
+        <a href="home.html", class ="go-nav", title ="CP341-Data_Visualization">Home</a>
+        <a href="manga.html", class ="go-nav", title ="Manga Visualization"> Manga</a>
+        <a href="final_webpage/index.html", class ="go-nav", title ="Final Project"> Cat Viz</a>
+    </div>
+    <div id = "welcome-title">
+        <!-- <h1> CP341:Data Visualization </h1>
+        <p> A random jank page by Grace Ivaska</p> -->
+        <h1>Project 1: Manga Visualization</h1>
+    </div>
+   <div id = "body">
+        <div id = "manga-vis" name = "manga-vis">
+            <div id = "content">
+                <div id = "intro">
+                    <!-- <h3> Manga Visualizations Intro:</h3> -->
+                    <h3>Intro:</h3>
+
+                    <p> Hello, some data visualizations have strict purposes. I am just ccoding up some visualizations just for my own personal enjoyment.
+                    And what something else I enjoy? Reading manga. So I decided to look at some data regarding the best selling manga as of 2023.</p>
+                </div>
+<!-- <p>
+Questions: 
+1. A description of your problem domain. Include any information you think your peers will need to understand the context of your data and tasks.
+2. Introduce your dataset! What information is available to you? Are there any limitations or issues?
+3. Describe your tasks/questions relating to the data, and prime the reader to start looking at your viz
+4. Embed your visualizations, making sure there is sufficient labeling and description for the reader to understand them
+5. Conclude with any interesting trends you found, things that were interesting, or even mention any non-results you had!
+</p> -->
+                <div id="problem-domain">
+                    <p>
+                       <b>Problem Domain:</b>  List of best-selling manga
+                    </p>
+                        <b>Manga</b> -  Japanese graphic novels that style developed around 19th Century Japan. - Wiki
+                        <a href="https://en.wikipedia.org/wiki/Manga"> Manga-Wiki</a>. Also, manga is the book form where as anime is animation or the video form. For more info:
+                        <a href="https://www.nypl.org/blog/2018/12/27/beginners-guide-manga"> Beginners guide to manga</a>
+                        <br>
+                        
+                    </p>
+                    <p> <b>Serialization</b> - For a manga to be serialized it means the series is now getting support from a publisher. 
+                        Manga are usually serialized in these manga magazines. 
+                    </p>   
+                    <p> <b>Demographic</b> - manga is sorted first by age group then genre, these are some of the common demongraphics:</p>
+                    <ul>
+                        <li><b>Shonen </b> - middle school boys,  
+                            <ul>
+                            <li>Themes: Action, Adventure, Friendship, Coming of Age</li>
+                            </ul>
+                        </li>
+                        <li><b>Shojo</b> - middle school girls,  
+                            <ul>
+                            <li> Themes: Romance, Drama , Coming of Age</li>
+                            </ul>
+                        </li>
+                        <li><b>Seinan</b> - adult men
+                            <ul>
+                                <li>Themes: Action Violence, Sex, Adult themes</li>
+                            </ul>            
+                        </li>
+                        <li><b>Josei</b> - adult women 
+                            <ul>
+                                <li>Themes: Romance, Sex, Adult themes</li>
+                            </ul>                  
+                        </li>
+                        <li><b>Kodomomuke (Kodomo)</b> - young children</li>
+                    </ul>   
+                    <!-- 
+                    Shonen - middle school boys,  Themes: Action, Adventure, Friendship, Coming of Age
+                    Shojo - middle school girls,  Themes: Romance, Drama , Coming of Age
+                    Seinan - adult men Themes: Action Violence, Sex, Adult themes
+                    Josei - adult women Themes: Romance, Sex, Adult themes
+                    Kodomomuke (Kodomo) - young children  -->
+                    
+                </div>
+                <div id="dataset"> 
+                    <h3> Data Set: Best Selling Manga - D RAHULSINGH</h3>
+                    <a href="https://www.kaggle.com/datasets/drahulsingh/best-selling-manga">Best Selling Manga</a>
+                    <p> I found this data set on Kaggle and its basically the most popular manga based on its cumulative Sales for its
+                        Manga series. For this data set, these are the attributes:</p>
+                   <ul> 
+                    <li>Manga series</li>
+                    <li>Author(s)</li>	
+                    <li>Publisher</li>
+                    <li>Demographic	</li>
+                    <li>No. of collected volumes</li>	
+                    <li>Serialization</li>		
+                    <li>Approximate sales in million(s)	</li>
+                    <li>Average sales per volume in million(s) </li>
+                   </ul>
+                   <p><b> Modification:</b> For this manga the serialization given was a range. So we added two extra colums for the serialization start date and its end date. For the manga on hiatus or on going we put the end date as 2023.</p>
+                   <p> <b>Limitation:</b> For this dataset, we do not have the sales for each year, we have only one point of reference. The last update for this data set occured in 2023. So this is a snapshot of the manga sales in 2023. This limitation impacted the data viusalizations since we can not graph the data over time, but rather try to see if there are any patterns amoung the other attributes for one point in time. For more of a sense of progressing and history, the best we can do is to look at the serialization start dates or look at the duration. </p>
+
+
+                </div>
+
+                <div id="tasks">
+                    <h3> Tasks:</h3>
+                    <p>Original tasks:</p>
+                    <ul>
+                        <li> Locate which mangas are sold the most over time</li>
+                        <li> Locate which publisher makes the most sales</li>
+                        <li>Compare the average sales per volume for different authors</li>
+                        <li> Compare the sales between different mangas serialization status</li>
+                        <li>  Analyze the ratio between how long series has been out and its total sales</li>
+                    </ul>
+
+                    <p>Tasks for Visualization:</p>
+                    <ul>
+                        <li>Search for the# of mangas that started in each year</li>
+                        <li>Sales of the manga over their lifetime ( sales vs serialization duration)</li>
+                    </ul>
+                    
+                    
+                </div>
+               
+
+                <div id=" visualizations">
+                    <h3> Visualizations:</h3>
+                    <div id = "content">
+                        <h4> Histogram </h4>
+                        <p> This histogram illustrates how many manga started the same year, where each bucket width is set to only contain one year. The color is used to show the proportion of demographics to each other for all the manga with the same start serialization. </p>
+                        <ul>
+                            <li><b> Marks:</b> lines </li>
+                            <li> <b> Channels:</b> length of the bar, color</li>
+                        </ul>
+                       
+                        <div id="histplot">
+                            <img src="file:///Users/ivaskgm8370/Desktop/CP341-Data_Visualization/images/manga-histplot.png">
+                            <p> Pros:</p>
+                            <ul>
+                                <li>Can see what demographics are most prevalent </li>
+                                <li> Can see the number of Manga that started in a given year</li>
+                            </ul>
+                            <p> Cons:</p>
+                            <ul>
+                                <li>Have to keep track of the tops and bottoms of the bar for the exact number of a demographic</li>
+                                <li>Sales of the manga over their lifetime ( sales vs serialization duration)</li>
+                            </ul>
+                        </div>
+                        <div id="heatmap">
+                            <h4> Heat Map</h4>
+                            <p> This heatmap is a varation on the same tast used for the hisotgram. One thing about the histogram was that it was hard to see the exact numbers of the demographics per year. 
+                            </p>
+                            <ul>
+                                <li><b> Marks:</b> area </li>
+                                <li> <b> Channels:</b> color hue, position of marks </li>
+                            </ul>
+                            <img src="file:///Users/ivaskgm8370/Desktop/CP341-Data_Visualization/images/heat-manga.png">
+                            <p> Pros:</p>
+                            <ul>
+                                <li> can see a general distribution of the Demographics over the serialization start date</li>
+                                <li> can search for the exact number of each  Demographic </li>
+                            </ul>
+                            <p> Cons:</p>
+                            <ul> 
+                                <li>Cannot see what manga is what point. There are no labels</li>
+                                <li>need to add up all the squares in the same column to get the total number of manga</li>
+                                <li>Not good for getting exact quanities.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="scatterplot">
+                            <h4>Scatter Plot</h4>
+                            <p> This is to see how the duration of a manga serialization effects its aproximate Sales. The dots are the unlabeled manga series, and the colors represent the demographic.</p>
+                            <ul>
+                                <li><b> Marks:</b> points </li>
+                                <li> <b> Channels:</b> color, position of dot</li>
+                            </ul>
+                            
+                               
+                            </p>
+                            <img src="file:///Users/ivaskgm8370/Desktop/CP341-Data_Visualization/images/manga-scat.png">
+                            <p> Pros:</p>
+                            <ul>
+                                <li>can see a general distribution of the Sales over duration</li>
+                            
+                            </ul>
+                            <p> Cons:</p>
+                            <ul> 
+                                 
+                                <li>Cannot see what manga is what point. There are no labels</li>
+                                <li>Cannot see the start date for the Mangas, so no way to know if a manga lasted for 6  year if it was 6 years in the 1980s or 6 years in 2000s.</li>
+                                <li>Not good for getting exact quanities.</li>
+                            </ul>
+                           
+                        </div>
+                    </div>
+
+                   
+                  
+                    <!-- /Users/ivaskgm8370/Desktop/CP341-Data_Visualization/tests/website -->
+                </div>
+                <div id ="conclusion">
+                    <h3> Closing Thoughts:</h3>
+            
+                    <p> From data can see that Shonen is a popular Genre. See that a lot of manga was serialized around the 1990s</p>
+                    <p>  From the Scatter plot, there are a lot of dots in the bottom left corner. Also, looks like there maybe a cut off price, since no dot goes below a certain number. </p>
+                    <p>  Overall would have liked to make more visualizations for instance a visualization invloving the publishers to compare with deomgraphics. I would also like to be able to get better at drawing conclusions from data in addition to getting better at visualizing data. </p>
+                    <!-- There were a bunch of things we thought of that we could do with the data.
+                    See what publisher has the most sales
+                    See the most common publisher
+                    See which genre is the most common
+                    See which manga had the most sales
+
+                    
+
+                    In the end we ended up just doing, 
+                    See what manga has the most sales 
+                    See which genre is the most common
+                    See the most common publisher
+                    See the sales for manga over its life time 
+                    
+                    It seemed that we were just interested in analyzing the demographics and the start date for the manga.
+
+                    Also  -->
+<!--  There are a lot of dots in the bottom left corner. Looks like there maybe a cut off price, since no dot goes below a certain number. 
+
+ -->
+                </div>
+     
+                
+            </div>
+
+        </div>
+   </div>
+
+   
+   <script src = "home.js"></script>
+</body>
+
+</html>

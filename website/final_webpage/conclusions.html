@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- <title>Simple Sidebar - Start Bootstrap Template</title> -->
+         <title>CP341-DV: Conclusions</title>
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v6.js"></script>
+       
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <!-- load the viz hub style sheet -->
+        <link rel="stylesheet" href="css/style_viz.css" />
+         <!-- load in the font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Website structure:
+What is our project about?
+- Domain
+- Questions
+- Tasks
+What Can you do with the Visualization
+Analyzing the data
+Design process :
+Brainstorming Datasets
+Drawing visual Encodings on White Board
+Challenges
+Similar data
+Figuring out linking
+Mapping a one to many
+Popup tool problem
+GeoJason
+Descision made along the way and why
+Interation after feedback
+Things we want to do hypothetical next steps
+Conclusion: 
+What did we learn
+How did we apply the things we were taught
+What were we taught
+How did we apply it… 
+
+         -->
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Cat Breeds Project </br> Navigation:</div>
+
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Home</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="intro.html">What is our Project About?</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="design.html">Design Process</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="conclusions.html">Conclusion</a>  </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="../home.html">Home</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="#!">About</a></li>
+
+                                <!-- <li class="nav-item"><a class="nav-link" href="#!">Link</a></li> -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#!">Action</a>
+                                        <a class="dropdown-item" href="#!">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                    </div> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                     <!-- <h1 class="mt-4">Simple Sidebar</h1> -->
+                    <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p> -->
+                    
+                    <!-- <h1 class="mt-4">CP341-DV: Cat Breeds project</h1>
+                    <h4> By Grace Ivaska and Kazu Shimotake</h4> -->
+                    <div id="conclusion-body">
+                        <h1 class="mt-4">Conclusion: Final Thoughts</h1>
+                        <p> words..</p>
+                        <div id="conclusion-learning">
+                            <h2> What did we learn?</h2>
+                            <div id="concl-learn-lang">
+                                <h4>1. Language Building:</h4>
+                                <div id = "cl-lang-pic"><img src="static/finalcatmemes/languagebuilding.JPG"></div>
+                                <div id="cl-lang-list">
+                                    <ul>
+                                        <li><b> Javascript, HTML, CSS:</b>
+                                            <ul>
+                                                <li>D3</li>
+                                                <li>Viz Hub</li>
+
+                                            </ul>
+                                        </li>
+                                        <li><b> More Python: </b>
+                                            <ul>
+                                                <li>Pandas data frames and parsing data</li>
+                                                <li>Formatting data</li>
+                                                <li>Creating and editing CSV files</li>
+                                                <li>Seaborn and matplotlib </li>
+
+                                            </ul>
+                                        
+                                        </li>        
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="concl-learn-viz-theory">
+                                <h4>2. Data Visualization Theory:</h4>
+                               <div id="cl-viz">
+                                    <ul>
+                                        <li>Vocabulary</li>
+                                        <li>Visual encodings
+                                        </li> 
+                                        <li>Different templates</li>        
+                                        <li><s>The bar chart is the best the pie chart sucks</s></li>        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="concl-learn-design-process">
+                                <h4>3. Design/Project Process:</h4>
+                                <div id="cl-design">
+                                    <ul>
+                                        <li> Brain Storming
+                                            <div id = "cl-design-pic"><img src="static/finalcatmemes/catbrainstorming.JPG"></div>
+                                        </li>
+                                        <li>Parsing and formatting datasets</li>
+                                        <li>Creating a visualization in seaborn and then in JavaScript</li>    
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="concl-learn-reasources">
+                                <h4>4.Tools and Reasources:</h4>
+                                <div id="cl-reasources">
+                                    <ul>
+                                        <li><b>Google Collab:</b>
+                                            <ul>
+                                                <li> for quick and dirty python testing</li>
+                                                <li> parsing, formating, and visualizing data</li>
+                                            </ul>
+                                        </li>
+                                        <li><b>Rollup</b> for bundling mulitple JS files</li>
+                                        <li><a href="https://seaborn.pydata.org/examples/index.html"><b>seaborn Gallery</b></a> for finding ideas and implementations for data vizualizations</li>         
+                                        <li><a href="https://observablehq.com/@d3/gallery"><b>D3 Gallery</b></a></li>  
+                                        <li>bootstrap format for webpages</li>        
+                                        <li><b>Kaggle</b> for datasets</li>   
+                                        <li><b>Color Brewer</b>  for colorblind friendly color paletts</li>        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="concl-learn-skills">
+                                <h4>5.Skills:</h4>
+                                <div id = "cl-skills-pic"><img src="static/finalcatmemes/conclusionskills.PNG"></div>
+                                <div id="cl-skills">
+                                    <ul>
+                                        <li>How to embed viz hub code into an HTML page</li>
+                                        <li>How to make static viz in D3</li>
+                                        <li>How to make dynamic viz in D3</li>
+                                            <ul>
+                                                <li>Dropdowns</li>
+                                                <li>Mouse events</li>   
+                                                <li>Zooms and pans</li>   
+                                                <li>Transitions and animations</li>   
+                                                <li>Changing fill colors and size of a given element</li>   
+                                                <li>Refactoring and reorganizing into modules </li>   
+                                            </ul>     
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        <div id="conclusion-applications">
+                            <h2> How did we apply the things we were taught?</h2>
+                            <div id="concl-app-design-process">
+                                <h4>1. We Practiced the Design Process</h4>
+                                <ul>
+                                    <li>Brainstormed while keeping data visualization theory in mind</li>
+                                    <li>Took in feedback and iterated </li>
+                                </ul>
+                                
+                            </div>
+                            <div id="concl-app-design-process">
+                                <h4>2. Parsed through and formatted our data for our code:</h4>
+                                <ul>
+                                    <li>Used pandas from python</li>
+                                    <li>Processed data</li>
+                                    <li>Created new CSV files with data formatted for our code</li>
+                                    <li>D3 from JS</li>
+                                </ul>
+                                
+                            </div>  
+                            <div id="concl-app-design-looking">
+                                <h4>3.Looked for datasets to be able to answer questions about domains of interest using Kaggle
+                                </h4>
+                            
+                            </div>  
+                            <div id="concl-app-design-static">
+                                <h4>4. We Practiced the Design Process</h4>
+                                <ul>
+                                    <li>Made standalone Colab visualizations using seaborn plots</li>
+                                    <li>Used Colab to test out ideas that we would later code up with Javascript in Vizhub</li>
+                                </ul>
+                                
+                            </div> 
+                            <div id="concl-app-design-process">
+                                <h4>5. Made decisions about color blind friendly color pallets useing Color Brewer</h4> 
+                            </div>  
+                            <div id="concl-app-design-process">
+                                <h4>6. Make a dynamic visualization in VizHub using D3</h4>
+                                <ul>
+                                    <li>Included mouse events linking two svgs</li>
+                                    <li>Included an interactive geojson world map and scatter plot</li>
+                                    <li>Increase size of a circle element when mouse is over it or when highlighted</li>
+                                    <li>Highlight country when the corresponding circle was highlighted</li>
+                                    <li>Highlight a circle when the corresponding country is highlighted</li>
+                                    <li>Made a tooltip window that pops up over a country when mouse is over it that changes depending on the country and follows the mouse</li>
+                                    <li>Data joins, which associated data to a given HTML element</li>
+                                    <li>Selections and dynamically modifying HTML elements based on mouse events
+                                    </li>
+                                    <li>Bundled the Viz Hub code with rollup
+                                    </li>
+                                    <li>Embed a dynamic visualization in HTML page</li>
+
+
+                                </ul>
+                                
+                            </div>        
+
+                        </div>
+
+                    
+                   
+
+
+
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src ="js/bundle.js"> </script>
+    </body>
+</html>

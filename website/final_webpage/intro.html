@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- <title>Simple Sidebar - Start Bootstrap Template</title> -->
+         <title>CP341-DV: Intro</title>
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v6.js"></script>
+       
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <!-- load the viz hub style sheet -->
+        <link rel="stylesheet" href="css/style_viz.css" />
+         <!-- load in the font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--  Website structure:
+What is our project about?
+- Domain
+- Questions
+- Tasks
+What Can you do with the Visualization
+Analyzing the data
+Design process :
+Brainstorming Datasets
+Drawing visual Encodings on White Board
+Challenges
+Similar data
+Figuring out linking
+Mapping a one to many
+Popup tool problem
+GeoJason
+Descision made along the way and why
+Interation after feedback
+Things we want to do hypothetical next steps
+Conclusion: 
+What did we learn
+How did we apply the things we were taught
+What were we taught
+How did we apply it… 
+
+         -->
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Cat Breeds Project </br> Navigation:</div>
+
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Home</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="intro.html">What is our Project About?</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="design.html">Design Process</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="conclusions.html">Conclusion</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="../home.html">Home</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="#!">About</a></li>
+
+                                <!-- <li class="nav-item"><a class="nav-link" href="#!">Link</a></li> -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#!">Action</a>
+                                        <a class="dropdown-item" href="#!">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                    </div> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                       <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p> -->
+
+                    <!-- <h1 class="mt-4">Simple Sidebar</h1> -->
+                    <!-- <h1 class="mt-4">CP341-DV: Cat Breeds project</h1>
+                    <h3> By Grace Ivaska and Kazu Shimotake</h3> -->
+                    <div id="project-overview-body">
+                        <h1 class="mt-4"> What is our Project About?</h1>
+                        <div id = "about-dataset">
+                            <div id = "interest-in-cats">
+                                <p> We, like most people should be, are interested in cats </p>
+                            </div>
+                            <div id = "join-us">
+                                <img src="static/finalcatmemes/joinmyreligion.JPG" alt="join-us"
+                                style="max-width: 30%;"
+                                height= "auto" class="medium-img"> </div> 
+                        
+                             <div id="intro-to-dataset">
+                                <p> Because of this interest, we wanted to know where different cats are from
+                                    After brainstorming a bit, we looked around and found a cat breed dataset
+                                    The dataset we chose is <a href="https://www.kaggle.com/datasets/warcoder/cat-breeds-details ">Cat Breeds Details</a> on Kaggle. 
+                                    This dataset has information about cat breeds and where they’re from, minimum and maximum weight and life expectancy, along with a list of subjective assessments of personality traits </p>
+
+                             </div>
+                        </div>
+                        <div id="limitations">
+                                <h3> Limitations</h3>
+                                <div>
+                                    These are limitations of the data set:
+                                    <ul> 
+                                    
+                                        <li>Many of the columns seemed subjective because they just collected ratings on a 1-5 scale based on things like family friendliness, playfulness, intelligence, grooming, general health and more.
+                                        </li>
+                                        <li> The data had a lot of formatting inconsistencies with multiple columns like country and length of cat</li>
+                    
+                                        <li>Though this data set provided a variety of global samples, the amount of global samples were sparse in comparison to data provided about the US. </li>
+                                    </ul>
+                                </div>
+
+                        </div>
+                        <div id = "about-domain">
+                            <h2>Domain:</h2><br>
+                            <div id="problem-domain"> Our <b>problem domain</b> is the origins of cat breeds.
+                                The people who are interested in this domain are anyone who’s interested in cats and people who are doing research about the history of cat breeds.
+                                <!-- Even if people aren’t interested in cats, we’re going to at least assume that they know what a cat is -->
+                                <!-- For now, we’re going to assume that people know what cats are     -->
+                                To understand this dataset, you’ll need to know what a <i>cat</i> is (which we’ll assume that you do).
+                            </div>
+                            <div id="cat-painting"> <img class="medium-img" src="static/finalcatmemes/knowwhatcatsare.JPG"></div>
+                        </div>
+                        <div id = "about-questions">
+                            <h2>Questions:</h2><br>
+                            <div id="ds-questions">
+                                <p> This what we want to know about the data:</p> 
+                                <ul>
+                                    <li>How many cats are from different countries?</li>
+                                    <li>What countries are different cats from?
+                                    </li>
+                                    <li>Which countries have the most cats from that country?</li>
+                                    <li>What parts of the world are the highest number of cats from?</li>
+                                    <li>How does the maximum life expectancy of different cats relate to their maximum weight?</li>
+                                </ul>
+                                <div> <img class="medium-img" src="static/finalcatmemes/wherecat.JPG"> </div>
+                            </div>
+                        </div>
+                        <div id = "about-tasks">
+                            <h2>Tasks:</h2><br>
+                            <div id="ds-tasks">
+                                <ul>
+                                    <li>Locate what country a cat is from </li>
+                                    <li>Discover what cats are from a country</li>
+                                    <li>Derive trends in cat data</li>
+                                </ul>
+                            </div>
+                            <div> <img class="medium-img" src="static/finalcatmemes/tasks.JPG"> </div>
+                        </div> 
+                        <div id = "about-usuage">
+                            <h2>How can you interact with the visualization?</h2><br>
+                            <div id="ds-usage"> 
+                                <p> So after all the iterations and edits this is what features and interactions we have.</p>
+                                General:
+                                <ul>
+                                    <li>Hover over the dots or the map</li>
+                                </ul>
+                                <div><img class="medium-img" src="static/finalcatmemes/hovercat.JPG"></div>
+                                Map:
+                                <ul>
+                                    <li>Zoom and pan the map</li>
+                                    <li>Derive the number of cats form a country based on its color and the legend</li>
+                                    <li>See which cats are from the selected country in the popup window</li>
+                                    <li>The cats that are associated with the selected country will be higlighted on the scatter plot. </li>
+
+                                </ul>
+                               
+                                Scatter Plot:
+                                <ul>
+                                    <li>Change the axes</li>
+                                    <li>See the country/countries a Cat  originates by hovering over a dot </li>
+                                
+                                </ul>
+
+                            </div>
+                        </div>
+                        
+                        <div id="quarantine">
+                            <h2> Visualization: </h2>
+                            <!-- This is where all our HTML from the Vizhub goes here: -->
+                            <!-- Create a div where the graph will take place -->
+                            <div id="my_dataviz">
+                                <div
+                                  id="forSVG1"
+                                  style="position: relative; display: inline-block"
+                                ></div>
+                                <div
+                                  id="forSVG2"
+                                  style="position: relative; display: inline-block"
+                                >
+                                  <div
+                                    id="controls"
+                                    style="position: relative; left: 225px; top: 50px"
+                                  >
+                                    <label for="xAttrSelect">x value:</label>
+                                    <select id="xAttrSelect">
+                                      <option value="min_life_expectancy">
+                                        min life expectancy
+                                      </option>
+                                      <option value="max_life_expectancy" selected>
+                                        max life expectancy
+                                      </option>
+                                      <option value="min_weight">min weight</option>
+                                      <option value="max_weight">max weight</option>
+                                    </select>
+                                    <br />
+                                    <label for="yAttrSelect">y value:</label>
+                                    <select id="yAttrSelect">
+                                      <option value="min_life_expectancy">
+                                        min life expectancy
+                                      </option>
+                                      <option value="max_life_expectancy">
+                                        max life expectancy
+                                      </option>
+                                      <option value="min_weight">min weight</option>
+                                      <option value="max_weight" selected>
+                                        max weight
+                                      </option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>   
+                                
+                        </div>
+
+                        <div id = "about-analyzing">
+                            <h2>Analyzing the Data:</h2><br>
+                            <div id="ds-analysis">
+                                ok so our analysis is a bit rough... we were more focused on coding a dynamic viz rather than whats the best way to analyze the data.
+                                Nonetheless this is what we found... <br>
+                                Interesting trends ? :
+                                <ul> 
+                                    <li>USA has 23 cat breeds</li>
+                                    <li>A lot of cat breeds’ maximum life expectancy is 15 years</li>
+                                    <li>A lot of cat breeds’ maximum weights are concentrated between 10 and 16 pounds</li>
+                                    <li>it’s interesting that our biggest outlier is an outlier due to its max weight not max life expectancy</li>
+                                    <li>Vast majority of cats come from countries north of the equator???</li>
+                                </ul>
+                            </div>
+                            <div> <img src="static/finalcatmemes/analysis.JPG"> </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src ="js/bundle.js"> </script>
+    </body>
+</html>

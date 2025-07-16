@@ -1,0 +1,64 @@
+h1{
+    font-size: 5em;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif
+}
+/* looked at this webite (https://www.w3schools.com/css/default.asp)code for the formating  */
+#topnav a{
+    display: inline-block;
+    width: auto;
+    margin: 0 !important;
+    padding: 5px 15px 5px 15px !important;
+    font-size: 15px !important;
+    text-decoration: none;
+    line-height: 1.5;
+
+}
+#topnav {
+    /* position: fixed; */
+    background-color: #282A35;
+    /* color: #f1f1f1; */
+    padding: 0;
+    letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Source Sans Pro Topnav', sans-serif; */
+
+    /* font-size: 0; */
+    /* top: 56px; */
+    z-index: 2;
+    width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+    scrollbar-width: none;
+}
+/* https://www.w3schools.com/css/css_link.asp */
+/* unvisited link */
+a:link {
+    color: red;
+
+    /* background-color: yellow; */
+  }
+  
+  /* visited link */
+  a:visited {
+    /* color: palevioletred */
+    /* color: rgb(31, 113, 130); */
+    color: peru;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: cadetblue;
+    /* background-color: cadetblue; */
+  }
+  
+  /* selected link */
+  a:active {
+    color: cadetblue;
+  }
+
+  /* header  */
+  #welcome-title p {
+    text-align: center;
+
+  }
